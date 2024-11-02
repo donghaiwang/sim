@@ -32,12 +32,14 @@ README.md
 5. 作图统一使用 TikZ 或 PPT 绘图，放置在目录`{MODULE_NAME}/undergraduate/fig/`目录下，使用`generate_img.py`脚本生成相应的`*.eps`格式作为统一的图片格式（不需要上传）。
 6. 代码中不要使用绝对路径，统一使用相对路径。
 7. 所有模块的配置统一放到`sim.config`文件中。
-8. Python的依赖放在`requirements.txt`中，并指定版本，可以将项目的配置文件放置在文件`sim.conf`中。
+8. Python的依赖放在`requirements.txt`中，并指定版本，可以将项目的配置文件放置在文件 [`config.ini`](https://github.com/OpenHUTB/sim/blob/master/config.ini) 中。
 9. 页面设计的风格尽量统一，依赖的包尽可能少。
 10. 软件依赖、输入数据、中间文件、输出结果等都放在`data/`目录下。
+11. 界面统一用pygame进行显示和交互，起始程序参考[手动控制示例](https://github.com/OpenHUTB/carla_doc/blob/master/src/examples/manual_control.py) 。
 
 
 ## 参考链接
 
 - [中文文档](https://openhutb.github.io/carla_doc/)
 - [毕业论文模板](https://github.com/OpenHUTB/undergraduate)
+- [pygame示例](https://github.com/guliang21/pygame) 、[超级玛丽](https://github.com/mx0c/super-mario-python) 等
