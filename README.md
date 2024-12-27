@@ -2,7 +2,7 @@
 实现车辆和行人代理的仿真。
 
 ## 环境配置
-支持和测试的平台包括：Windows 10 和 Ubuntu 24.04。
+支持和测试的平台包括：Windows 10 和 Ubuntu 20.04。
 1. 下载并安装 Python 3.7、Carla 0.9.15、latex 2023、Texstudio 4.6.4、Git 2.42.0（Windows可使用`TortoiseGit 2.15.0.0`作为图形界面进行代码提交）。
 2. 使用`git clone https://github.com/OpenHUTB/sim.git` 进行仓库的递归克隆。
 
