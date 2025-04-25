@@ -17,7 +17,7 @@ jobs:
         # 这是设置Python action的版本，不是Python的版本
         uses: actions/setup-python@v5
         with:
-          python-version: '3.7' # 指定python版本
+          python-version: '3.9' # 指定python版本
           # 可选 - x64 or x86 架构，默认为 x64
           architecture: 'x64'
       - name: Install Python dependencies
