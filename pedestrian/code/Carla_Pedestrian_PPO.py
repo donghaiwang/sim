@@ -107,8 +107,8 @@ class EnhancedPedestrianEnv(gym.Env):
     def _configure_camera(self):
         """配置RGB摄像头"""
         camera_bp = self.blueprint_library.find('sensor.camera.rgb')
-        camera_bp.set_attribute('image_size_x', '640')  # 降低分辨率
-        camera_bp.set_attribute('image_size_y', '360')
+        camera_bp.set_attribute('image_size_x', '960')  # 降低分辨率
+        camera_bp.set_attribute('image_size_y', '540')
         camera_bp.set_attribute('fov', '90')
         return camera_bp
 
@@ -486,20 +486,20 @@ if __name__ == "__main__":
         batch_size=128,
         gamma=0.99,
         policy_kwargs={
-            "net_arch": dict(pi=[256, 256], vf=[256, 256]),
+            "net_arch": dict(pi=[128, 128], vf=[128, 128]),
             "activation_fn": torch.nn.ReLU
         },
-        device='auto'
+        device='cpu'
     )
     wrapped_env.model = model
 
     try:
         # 分阶段训练
-        print("开始第一阶段训练（10k steps）...")
-        model.learn(total_timesteps=10000)
+        print("开始第一阶段训练（100k steps）...")
+        model.learn(total_timesteps=100000)
 
-        print("开始第二阶段训练（50k steps）...")
-        model.learn(total_timesteps=50000, reset_num_timesteps=False)
+        print("开始第二阶段训练（500k steps）...")
+        model.learn(total_timesteps=500000, reset_num_timesteps=False)
 
     finally:
         model.save("pedestrian_ppo")
